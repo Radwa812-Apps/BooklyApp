@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:radwa_back/Features/Home/presentation/views/widgets/appBar_widget.dart';
-import 'package:radwa_back/Features/Home/presentation/views/widgets/bestSellerList_widget.dart';
+import 'package:radwa_back/Features/Home/presentation/views/widgets/best_List_widget.dart';
 import 'package:radwa_back/Features/Home/presentation/views/widgets/book_list_widget.dart';
 import '../../../../core/utils/styles.dart';
 
@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomAppBarWidget(),
-                  BookListWidget(),
+                  FeaturedBookListWidget(),
                   SizedBox(height: 50),
                   Text("Best Seller", style: Styles.textStyle18),
                   SizedBox(height: 20),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:radwa_back/core/app_routers.dart';
 import 'package:radwa_back/core/utils/assets.dart';
+
 class CustomAppBarWidget extends StatelessWidget {
-  const CustomAppBarWidget({
-    super.key,
-  });
+  const CustomAppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,12 @@ class CustomAppBarWidget extends StatelessWidget {
         children: [
           Image.asset(AssetsData.splashLogo, width: 100, height: 100),
           Spacer(flex: 1),
-          IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.search)),
+          IconButton(
+            onPressed: () {
+              context.go(AppRouters.searchResult);
+            },
+            icon: Icon(FontAwesomeIcons.search),
+          ),
         ],
       ),
     );

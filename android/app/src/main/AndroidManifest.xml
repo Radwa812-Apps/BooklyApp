@@ -1,4 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<queries>
+  <!-- If your app checks for SMS support -->
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="https" />
+  </intent>
+  <intent>
+    <action android:name="android.support.customtabs.action.CustomTabsService" />
+  </intent>
+</queries>
+
+   <uses-permission android:name="android.permission.INTERNET"/> <!-- Add this -->
+<!-- Provide required visibility configuration for API level 30 and above -->
+
     <application
         android:label="radwa_back"
         android:name="${applicationName}"

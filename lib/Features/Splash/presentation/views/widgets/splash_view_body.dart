@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/utils.dart';
-import 'package:radwa_back/Features/Home/presentation/views/home_view.dart';
+import 'package:go_router/go_router.dart';
 import 'package:radwa_back/Features/Splash/presentation/views/widgets/text_animationBuilder.dart';
-
-import '../../../../../constans.dart';
+import 'package:radwa_back/core/app_routers.dart';
 import '../../../../../core/utils/assets.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -49,15 +46,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       ],
     );
   }
-  
+
   void navigateToHome() {
-    
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(
-        () => HomeView(),
-        transition: Transition.fade,
-        duration: kTranstionsDuration,
-      );
+      // ignore: use_build_context_synchronously
+      context.go(AppRouters.homeView);
     });
   }
 
@@ -77,5 +70,4 @@ class _SplashViewBodyState extends State<SplashViewBody>
     // setState(() {});
     // });
   }
-
 }

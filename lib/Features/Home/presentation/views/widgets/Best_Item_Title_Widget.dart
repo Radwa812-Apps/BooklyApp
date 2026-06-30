@@ -1,13 +1,10 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:radwa_back/Features/Home/data/models/book_model/book_model.dart';
 import 'package:radwa_back/core/utils/styles.dart';
 
 class BestSellerItemTitleWidget extends StatelessWidget {
-  const BestSellerItemTitleWidget({
-    super.key,
-  });
-
+  const BestSellerItemTitleWidget({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -15,17 +12,12 @@ class BestSellerItemTitleWidget extends StatelessWidget {
       child: ListTile(
         contentPadding: EdgeInsets.zero,
         title: Text(
-          "Harry Poter and the Coblet of Fire",
-          style: Styles.textStyle18.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
+          bookModel.volumeInfo?.title?? "No Title",
+          style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold),
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
-        subtitle: Text(
-          "J.K Rowling",
-          style: Styles.styleText14,
-        ),
+        subtitle: Text(bookModel.volumeInfo?.authors?[0]??"", style: Styles.styleText14),
       ),
     );
   }
