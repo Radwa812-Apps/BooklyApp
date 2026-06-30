@@ -28,6 +28,8 @@ class DetailsSectionWidget extends StatelessWidget {
         SizedBox(height: 20),
         Text(
           book.volumeInfo!.title!,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.center,
           style: Styles.textStyle18.copyWith(fontSize: 28),
         ),
@@ -35,10 +37,12 @@ class DetailsSectionWidget extends StatelessWidget {
         Opacity(
           opacity: 0.8,
           child: Text(
-            book.volumeInfo!.authors![0],
+            book.volumeInfo?.authors?[0] ?? "",
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
             style: Styles.styleText14.copyWith(
               fontStyle: FontStyle.italic,
-              fontSize: 10,
+              fontSize: 8,
             ),
           ),
         ),
